@@ -8,7 +8,7 @@ import {
 import { TodoHeader, IconClickButton } from '../../assets/comp'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import DateComp from '../date/DateComp'
+import DateInput from '../dateInput/DateInput'
 
 export default class App extends Component {
   constructor(props, context) {
@@ -29,8 +29,7 @@ export default class App extends Component {
             </IconClickButton>
           </span>
         </TodoHeader>
-        <Input placeholder={this.props.inputPlaceHolder} />
-        <DateComp />
+        <DateInput />
       </>
     )
   }

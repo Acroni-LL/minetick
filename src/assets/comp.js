@@ -28,3 +28,8 @@ export const DateCompStyled = styled.span`
     }
   }
 `
+export const HoverOver = styled.span`
+  :hover {
+    background-color: #f5f5f5;
+  }
+`
