@@ -1,11 +1,11 @@
 import {
-  FileOutlined,
-  PieChartOutlined,
-  UserOutlined,
-  DesktopOutlined,
-  TeamOutlined,
+  TableOutlined,
+  RestOutlined,
+  CalendarOutlined,
+  GroupOutlined,
+  CarryOutOutlined,
 } from '@ant-design/icons'
-import { Layout, Menu, theme } from 'antd'
+import { Layout, Menu, theme, Divider } from 'antd'
 import { useState } from 'react'
 import './TodoHome.less'
 import MainPage from '../../../common/mainPage/MainPage'
@@ -20,12 +20,14 @@ function getItem(label, key, icon, children) {
   }
 }
 
-const items = [
-  getItem('今天', '1', <PieChartOutlined />),
-  getItem('最近7天', '2', <DesktopOutlined />),
-  getItem('收集箱', '3', <UserOutlined />),
-  getItem('已完成', '4', <TeamOutlined />),
-  getItem('垃圾桶', '5', <FileOutlined />),
+const topItems = [
+  getItem('今天', '1', <CalendarOutlined />),
+  getItem('最近7天', '2', <TableOutlined />),
+  getItem('收集箱', '3', <GroupOutlined />),
+]
+const bottomItems = [
+  getItem('已完成', '4', <CarryOutOutlined />),
+  getItem('垃圾桶', '5', <RestOutlined />),
 ]
 
 const App = () => {
@@ -48,7 +50,19 @@ const App = () => {
           // theme="dark"
           defaultSelectedKeys={['1']}
           mode="inline"
-          items={items}
+          items={topItems}
+          overflowedIndicator
+        />
+        <Divider />
+        <div>清单</div>
+        <div>标签</div>
+        <div>过滤器</div>
+        <Divider />
+        <Menu
+          // theme="dark"
+          // defaultSelectedKeys={['1']}
+          mode="inline"
+          items={bottomItems}
           overflowedIndicator
         />
       </Sider>
