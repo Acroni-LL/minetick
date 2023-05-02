@@ -25,7 +25,7 @@ const ForkTsCheckerWebpackPlugin =
     ? require('react-dev-utils/ForkTsCheckerWarningWebpackPlugin')
     : require('react-dev-utils/ForkTsCheckerWebpackPlugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash')
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -590,7 +590,6 @@ module.exports = function (webpackEnv) {
             : undefined
         )
       ),
-      isEnvProduction && new BundleAnalyzerPlugin({ analyzerPort: 9090 }), // 使用默认配置
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358
